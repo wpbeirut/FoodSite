@@ -1,5 +1,5 @@
 import _ from "lodash";
-import "./_vendor.scss";
+//import "./_vendor.scss";
 
 const icons = document.querySelectorAll('.section-1-icons i')
 let i = 1
@@ -15,4 +15,4 @@ setInterval(() => {
 	} else {
 		icon.nextElementSibling.classList.add('change')
 	}
-}, 4000)
+}, 4000);
