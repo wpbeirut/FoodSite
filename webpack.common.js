@@ -11,7 +11,7 @@ const purgePath = {
 module.exports = {
   entry: {
     index: "./src/index.js",
-    courses: "./src/pages/courses.js",
+    //courses: "./src/pages/courses.js",
   },
   output: {
     filename: "[name].[contenthash].js",
@@ -28,7 +28,7 @@ module.exports = {
   },
   plugins: [
     new webpack.ProvidePlugin({
-      mnt: "moment",
+      //mnt: "moment",
       $: "jquery",
     }),
     new CopyPlugin({
@@ -45,12 +45,12 @@ module.exports = {
       chunks: ["index"],
       filename: "index.html",
     }),
-    new HtmlWebpackPlugin({
+    /*new HtmlWebpackPlugin({
       template: "./src/pages/courses.html",
       chunks: ["courses"],
       filename: "courses.html",
       base: "pages",
-    }),
+    }),*/
   ],
   optimization: {
     splitChunks: {
