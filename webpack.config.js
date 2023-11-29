@@ -3,6 +3,13 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const { ProvidePlugin } = require("webpack");
+const {PurgeCSSPlugin} = require("purgecss-webpack-plugin");
+const glob = require("glob");
+
+const purgePath = {
+  src: path.join(__dirname, "src"),
+};
 
 module.exports = {
   entry: {
@@ -34,6 +41,10 @@ module.exports = {
     ],
   },
   plugins: [
+    new ProvidePlugin({
+      mnt: "moment",
+      $: "jquery",
+    }),
     new HtmlWebpackPlugin({
       template: "./src/index.html",
       chunks: ["index"],
@@ -54,8 +65,12 @@ module.exports = {
         },
       ],
     }),
-    //new BundleAnalyzerPlugin({}),
-    new MiniCssExtractPlugin()
+    new PurgeCSSPlugin({
+      paths: glob.sync(`${purgePath.src}/**/*`, { nodir: true }),
+      safelist: ["dummy-css"],
+    }),
+    // new BundleAnalyzerPlugin({}),
+    new MiniCssExtractPlugin(),
   ],
   optimization: {
     splitChunks: {
