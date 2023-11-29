@@ -1,4 +1,5 @@
 const path = require("path");
+const CopyPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const webpack = require("webpack");
 const glob = require("glob");
@@ -29,6 +30,15 @@ module.exports = {
     new webpack.ProvidePlugin({
       mnt: "moment",
       $: "jquery",
+    }),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, "src/assets/images/*"),
+          to: path.resolve(__dirname, "dist"),
+          context: "src",
+        },
+      ],
     }),
     new HtmlWebpackPlugin({
       template: "./src/index.html",

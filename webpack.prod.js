@@ -1,5 +1,4 @@
 const path = require("path");
-const CopyPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const PurgeCss = require("purgecss-webpack-plugin");
 const glob = require("glob");
@@ -25,15 +24,6 @@ module.exports = merge(commonConfig, {
     ],
   },
   plugins: [
-    new CopyPlugin({
-      patterns: [
-        {
-          from: path.resolve(__dirname, "src/assets/images/*"),
-          to: path.resolve(__dirname, "dist"),
-          context: "src",
-        },
-      ],
-    }),
     new PurgeCss({
       paths: glob.sync(`${purgePath.src}/**/*`, { nodir: true }),
       safelist: ["dummy-css"],
