@@ -1,18 +1,18 @@
 import _ from "lodash";
-import bootstrap from "bootstrap";
-import Typed from "typed.js";
-import validate from "validate.js";
-import toastr from "toastr";
+//import bootstrap from "bootstrap";
+//import Typed from "typed.js";
+//import validate from "validate.js";
+//import toastr from "toastr";
 // import banner from './assets/banner-image.png';
 // import showModal from "./components/modal";
-import {showDate} from './libs/showDate';
+//import {showDate} from './libs/showDate';
 
-showDate();
+//showDate();
 
-import "./index.css";
+//import "./style.css";
 import "./_vendor.scss";
 
-const footerCol1Items = ["Home", "About", "Contact us", "FAQ", "Blog"];
+/*const footerCol1Items = ["Home", "About", "Contact us", "FAQ", "Blog"];
 const footerCol2Items = ["Flutter", "Javascript", "Java", "Nodejs", "Python"];
 const footerCol3Items = ["Home", "Feature", "Pricing", "FAQ", "About"];
 
@@ -62,14 +62,14 @@ buildFooterItems(footerCol2, footerCol2Items);
 buildFooterItems(footerCol3, footerCol3Items);
 
 $("#pricing-plan").on("click", function () {
-  import(/* webpackChunkName: "modal" */ "./components/modal").then(
-    (module) => {
-      const showModal = module.default;
-      showModal();
-      $("#myModal").css("display", "block");
-    }
-  );
-});
+//  import(/* webpackChunkName: "modal" */ //"./components/modal").then(
+//    (module) => {
+//      const showModal = module.default;
+//      showModal();
+//      $("#myModal").css("display", "block");
+//    }
+//  );
+//});
 
 // const bannerEl = $("#banner-image")[0];
 // bannerEl.src = banner;

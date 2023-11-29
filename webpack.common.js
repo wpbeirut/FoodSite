@@ -10,7 +10,7 @@ const purgePath = {
 module.exports = {
   entry: {
     index: "./src/index.js",
-    courses: "./src/pages/courses.js",
+    //courses: "./src/pages/courses.js",
   },
   output: {
     filename: "[name].[contenthash].js",
