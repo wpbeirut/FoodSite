@@ -1,5 +1,5 @@
 {
-  "name": "Webpack Ready Base",
+  "name": "Webpack Production Base",
   "version": "1.0.0",
   "description": "Webpack Configuration with bootstrap and jquery ready",
   "main": "index.js",
